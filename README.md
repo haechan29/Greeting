@@ -2,7 +2,8 @@
 
 ### This practice was designed from below
 [Greeting](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata)
-[String Calculater](https://medium.com/@marlenac/learning-tdd-with-katas-3f499cb9c492)
+&nbsp;&nbsp;
+[String alculater](https://medium.com/@marlenac/learning-tdd-with-katas-3f499cb9c492)
 
 </br>
 
