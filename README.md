@@ -1,4 +1,4 @@
-# The First Project to Practice TDD.
+# The Project to Practice TDD.
 
 ### This practice was designed from [HERE](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata)
 
