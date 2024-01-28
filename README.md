@@ -11,9 +11,9 @@
 ## Gained benefit of
 ### 1. The code looking good
 
-For example, the __romanDoDecimal()__ method which converts ``Roman numeral`` into ``decimal`` is like below.
+For example, the __romanToDecimal()__ method which converts ``Roman numeral`` into ``decimal`` is like below.
 ```
-fun toDecimal(roman: String): Int {
+fun romanToDecimal(roman: String): Int {
     if (roman.isEmpty()) return 0
     return roman
         .toCharArray()
@@ -32,7 +32,7 @@ fun getSignOfCharacter(i: Int, roman: String) =
 And this is the code __doing exactly the same__ without ``TDD``
 
 ```
-fun toDecimal(roman: String): Int {
+fun romanToDecimal(roman: String): Int {
     var sum = 0
     for (i in roman.indices.first until roman.indices.last) {
         val cur = roman[i]
