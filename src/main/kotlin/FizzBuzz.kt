@@ -32,6 +32,8 @@ fun toDecimal(number: Int): String {
     if (number % 15 == 0) return "FizzBuzz"
     if (number % 5 == 0) return "Buzz"
     if (number % 3 == 0) return "Fizz"
-    if (number <= 20) return decimals[number]!!
-    return "${decimals[number - number % 10]} ${decimals[number % 10]}"
+    if (number < 20) return decimals[number] ?: ""
+    val one = number % 10
+    val ten =  number - one
+    return "${decimals[ten] ?: ""} ${decimals[one] ?: ""}"
 }
