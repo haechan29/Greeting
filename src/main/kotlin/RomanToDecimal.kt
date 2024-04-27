@@ -10,13 +10,23 @@ val romanValue = mutableMapOf<Char, Int>().apply {
 }
 
 fun toDecimal(roman: String): Int {
-    if (roman.isEmpty()) return 0
-    return roman
-        .toCharArray()
-        .mapIndexed { i, c ->
-            getSignOfCharacter(i, roman) * romanValue[c]!!
-        }.sum()
+    val romanValues = roman.map { romanValue[it] ?: 0 }
+    val signs = roman.getSigns()
+    return romanValues.zip(signs).sumOf { (value, sign) ->
+        value * sign
+    }
 }
 
-fun getSignOfCharacter(i: Int, roman: String) =
-    if (i < roman.indices.last && romanValue[roman[i]]!! < romanValue[roman[i + 1]]!!) -1 else 1
+fun String.getRomanValue(i: Int) = try {
+    romanValue[this[i]] ?: 0
+} catch(_: Exception) {
+    0
+}
+
+fun String.getSigns() = indices
+    .map { i -> getRomanValue(i) to getRomanValue(i + 1) }
+    .map { (cur, next) ->
+        cur >= next
+    }.map { isPositive ->
+        if (isPositive) 1 else -1
+    }
